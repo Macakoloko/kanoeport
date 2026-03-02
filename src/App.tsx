@@ -111,7 +111,7 @@ const TEAM = [
   {
     name: "GABRIEL FERREIRA",
     role: "Creative Director",
-    image: "https://i.ibb.co/KchFhWm4/Eu.jpg",
+    image: "https://i.ibb.co/qMb17LMV/Gabriel-Ferreira-Fundadore-Tecnologia-e-webdesign.jpg",
     bio: "The visionary behind the chaos. Specialized in breaking rules and creating new ones."
   },
   {
@@ -478,6 +478,7 @@ export default function App() {
                 src={selectedProject.image} 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
+                loading="lazy"
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               />
               {/* Darkening Overlays */}
@@ -697,7 +698,7 @@ export default function App() {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-40">
-          <Canvas>
+          <Canvas dpr={[1, 2]} performance={{ min: 0.5 }}>
             <PerspectiveCamera makeDefault position={[0, 0, 5]} />
             <ambientLight intensity={0.5} />
             <pointLight position={[10, 10, 10]} />
@@ -797,6 +798,7 @@ export default function App() {
                   layoutId={`project-img-${project.id}`}
                   whileHover={{ scale: 1.05 }}
                   src={project.image} 
+                  loading="lazy"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                   referrerPolicy="no-referrer"
                   transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -906,6 +908,7 @@ export default function App() {
               <img 
                 src={member.image} 
                 alt={member.name}
+                loading="lazy"
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
                 referrerPolicy="no-referrer"
               />
