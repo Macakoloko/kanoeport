@@ -8,21 +8,21 @@ export function HeroScene() {
 
   useFrame((state) => {
     if (sphereRef.current) {
-      sphereRef.current.rotation.x = state.clock.getElapsedTime() * 0.2;
-      sphereRef.current.rotation.y = state.clock.getElapsedTime() * 0.3;
+      sphereRef.current.rotation.x = state.clock.getElapsedTime() * 0.1;
+      sphereRef.current.rotation.y = state.clock.getElapsedTime() * 0.15;
     }
   });
 
   return (
-    <Float speed={2} rotationIntensity={1} floatIntensity={2}>
-      <Sphere ref={sphereRef} args={[1, 64, 64]} scale={1.5}>
+    <Float speed={1.5} rotationIntensity={0.5} floatIntensity={1}>
+      <Sphere ref={sphereRef} args={[1, 32, 32]} scale={1.5}>
         <MeshDistortMaterial
           color="#00ff41"
           attach="material"
-          distort={0.5}
-          speed={2}
-          roughness={0.2}
-          metalness={0.8}
+          distort={0.4}
+          speed={1.5}
+          roughness={0.3}
+          metalness={0.7}
         />
       </Sphere>
       <mesh position={[2, -1, -2]} rotation={[0.5, 0.5, 0]}>
